@@ -1,6 +1,8 @@
 {
   "name": "react-ts-prac",
   "version": "1.0.0",
-  "scripts": {},
+  "scripts": {
+    "react-hooks-and-apis": "pnpm run dev --workspace react-hooks-and-apis"
+  },
   "packageManager": "pnpm@10.7.0"
 }
