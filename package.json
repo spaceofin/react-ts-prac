@@ -1,8 +1,12 @@
 {
   "name": "react-ts-prac",
+  "private": true,
   "version": "1.0.0",
   "scripts": {
-    "react-hooks-and-apis": "pnpm run dev --workspace react-hooks-and-apis"
+    "react-hooks-and-apis": "pnpm --filter @react-ts-prac/react-hooks-and-apis dev"
   },
-  "packageManager": "pnpm@10.7.0"
+  "packageManager": "pnpm@10.7.0",
+  "devDependencies": {
+    "typescript": "~5.7.2"
+  }
 }
