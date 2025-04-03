@@ -1,10 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { fetchPokemons } from "../lib/fetchPokemons";
 import { Pokemon } from "../types/pokemon";
-import { PokemonList } from "./PokemonList";
+import { MemoizedPokemonList, PokemonList } from "./PokemonList";
 
-export default function PokemonDisplay() {
-  const [pokemons, setPokemons] = useState<Pokemon[] | []>([]);
+export default function PokemonListDisplay({
+  count,
+  useMemoized = false,
+}: {
+  count: number;
+  useMemoized?: boolean;
+}) {
+  const [pokemons, setPokemons] = useState<Pokemon[] | null>(null);
+  const normalComponentRerenderCount = useRef(0);
+  const memoizedComponentRerenderCount = useRef(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,5 +22,35 @@ export default function PokemonDisplay() {
     fetchData();
   }, []);
 
-  return <PokemonList pokemons={pokemons} />;
+  if (!pokemons) {
+    return <div className="mt-10 ml-5 w-full text-2xl">Loading...</div>;
+  }
+
+  return useMemoized ? (
+    <div className="flex flex-col w-full">
+      <div className="flex items-center gap-4">
+        <h1 className="text-3xl font-bold mb-2 pl-2">Memoized Pokemon List</h1>
+        <span className="text-lg">
+          Rerender count: {normalComponentRerenderCount.current}
+        </span>
+      </div>
+      <MemoizedPokemonList
+        pokemons={pokemons}
+        rerenderCount={normalComponentRerenderCount}
+      />
+    </div>
+  ) : (
+    <div className="flex flex-col w-full">
+      <div className="flex items-center gap-4">
+        <h1 className="text-3xl font-bold mb-2 pl-2">Pokemon List</h1>
+        <span className="text-lg">
+          Rerender count: {memoizedComponentRerenderCount.current}
+        </span>
+      </div>
+      <PokemonList
+        pokemons={pokemons}
+        rerenderCount={memoizedComponentRerenderCount}
+      />
+    </div>
+  );
 }

@@ -14,9 +14,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   margin: 0;
   display: flex;
-  min-width: 100vh;
+  min-width: 100vw;
   min-height: 100vh;
 }
