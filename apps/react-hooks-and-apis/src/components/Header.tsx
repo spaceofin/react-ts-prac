@@ -6,6 +6,7 @@ export default function Header() {
       <nav className="flex gap-12">
         <Link to="/">Home</Link>
         <Link to="/memoization/react-memo-example">React.memo</Link>
+        <Link to="/memoization/use-memo-example">useMemo</Link>
       </nav>
     </header>
   );

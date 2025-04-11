@@ -5,6 +5,7 @@ import App from "./App.tsx";
 import { BrowserRouter, Routes, Route } from "react-router";
 import ReactMemoExample from "./pages/memoization/ReactMemoExample.tsx";
 import Header from "./components/Header.tsx";
+import UseMemoExample from "./pages/memoization/UseMemoExample.tsx";
 
 createRoot(document.getElementById("root")!).render(
   // <StrictMode>
@@ -15,6 +16,10 @@ createRoot(document.getElementById("root")!).render(
       <Route
         path="/memoization/react-memo-example"
         element={<ReactMemoExample />}
+      />
+      <Route
+        path="/memoization/use-memo-example"
+        element={<UseMemoExample />}
       />
     </Routes>
   </BrowserRouter>
