@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PokemonListDisplay from "../../components/PokemonDisplay";
 
-export default function UseMemoExample() {
+export default function ReactMemoExample() {
   const [count, setCount] = useState(0);
 
   return (
