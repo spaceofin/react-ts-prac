@@ -7,6 +7,7 @@ export default function Header() {
         <Link to="/">Home</Link>
         <Link to="/memoization/react-memo-example">React.memo</Link>
         <Link to="/memoization/use-memo-example">useMemo</Link>
+        <Link to="/memoization/use-callback-example">useCallback</Link>
       </nav>
     </header>
   );

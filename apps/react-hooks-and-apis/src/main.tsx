@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import ReactMemoExample from "./pages/memoization/ReactMemoExample.tsx";
 import Header from "./components/Header.tsx";
 import UseMemoExample from "./pages/memoization/UseMemoExample.tsx";
+import UseCallbackExample from "./pages/memoization/UseCallbackExample.tsx";
 
 createRoot(document.getElementById("root")!).render(
   // <StrictMode>
@@ -20,6 +21,10 @@ createRoot(document.getElementById("root")!).render(
       <Route
         path="/memoization/use-memo-example"
         element={<UseMemoExample />}
+      />
+      <Route
+        path="/memoization/use-callback-example"
+        element={<UseCallbackExample />}
       />
     </Routes>
   </BrowserRouter>
