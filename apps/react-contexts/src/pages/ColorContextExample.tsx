@@ -1,6 +1,7 @@
 import ColorBox from "../components/ColorBox";
 import { ColorContext } from "../contexts/colorContext";
 import ButtonDisplayGroup from "../components/ButtonDisplayGroup";
+import ButtonDisplayGroup2 from "../components/ButtonDisplayGroup2";
 
 export default function ColorContextExample() {
   return (
@@ -28,6 +29,14 @@ export default function ColorContextExample() {
         </h1>
         <div className="px-2">
           <ButtonDisplayGroup />
+        </div>
+      </div>
+      <div className="flex flex-col gap-6">
+        <h1 className="text-2xl font-bold text-slate-800">
+          Toggle Buttons Example2
+        </h1>
+        <div className="px-2">
+          <ButtonDisplayGroup2 />
         </div>
       </div>
     </div>
