@@ -7,6 +7,7 @@ export default function Header() {
         <Link to="/">Home</Link>
         <Link to="/color-context">Color Context</Link>
         <Link to="/toggle-button-contexts">Toggle Button Contexts</Link>
+        <Link to="/contexts-with-custom-hooks">Contexts & Hooks</Link>
       </nav>
     </header>
   );
