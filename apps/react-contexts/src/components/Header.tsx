@@ -6,6 +6,7 @@ export default function Header() {
       <nav className="flex gap-12">
         <Link to="/">Home</Link>
         <Link to="/color-context">Color Context</Link>
+        <Link to="/toggle-button-contexts">Toggle Button Contexts</Link>
       </nav>
     </header>
   );
